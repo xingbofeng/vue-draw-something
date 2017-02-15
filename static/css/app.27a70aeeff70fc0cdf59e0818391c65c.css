@@ -1,0 +1,118 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+canvas[data-v-5eb90f0f] {
+  border: #999 solid 2px;
+}
+button[data-v-5eb90f0f] {
+  background-color: green;
+  border-radius: 2px;
+  text-align: center;
+  width: 50px;
+  height: 30px;
+  font-size: 16px;
+  border: 2px #777 solid;
+  box-sizing: content-box;
+}
+.header[data-v-5eb90f0f] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 800px;
+}
+input[data-v-5eb90f0f] {
+  height: 30px;
+  width: 350px;
+  font-size: 16px;
+  line-height: 30px;
+  outline: none;
+  padding: 0;
+}
+.Canvas[data-v-5eb90f0f] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+button[data-v-27a9a13d] {
+  background-color: green;
+  border-radius: 2px;
+  text-align: center;
+  width: 50px;
+  height: 30px;
+  font-size: 16px;
+  border: 2px #777 solid;
+  box-sizing: content-box;
+}
+input[data-v-27a9a13d] {
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  outline: none;
+  padding: 0;
+}
+.chatBroad[data-v-27a9a13d] {
+  height: 600px;
+  overflow-y: scroll;
+  width: 350px;
+  border: 2px #777 solid;
+}
+.chat input[data-v-27a9a13d] {
+  margin-top: 20px;
+  width: 280px;
+}
+
+canvas[data-v-2e4769f0] {
+  border: #999 solid 2px;
+}
+button[data-v-2e4769f0] {
+  background-color: green;
+  border-radius: 2px;
+  text-align: center;
+  width: 50px;
+  height: 30px;
+  font-size: 16px;
+  border: 2px #777 solid;
+  box-sizing: content-box;
+}
+.header[data-v-2e4769f0] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 800px;
+}
+input[data-v-2e4769f0] {
+  height: 30px;
+  width: 350px;
+  font-size: 16px;
+  line-height: 30px;
+  outline: none;
+  padding: 0;
+}
+.Canvas[data-v-2e4769f0] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/*# sourceMappingURL=app.27a70aeeff70fc0cdf59e0818391c65c.css.map*/
