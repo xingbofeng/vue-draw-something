@@ -12,6 +12,8 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2",
     "vue": "^2.1.10",
     "vue-router": "^2.2.0"
   },
