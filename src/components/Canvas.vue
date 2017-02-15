@@ -1,30 +1,47 @@
 <template>
   <div class="Canvas">
-    <h1><a href="/paintCanvas/index.html#/guess">我来猜</a></h1>
-    <canvas
-      v-on:mousedown="paintBegin"
-      v-on:mouseup="paintEnd"
-      id="canvas"
-      width="800"
-      height="500"
-    ></canvas>
-  <button v-on:click="clearPath">清除</button>
+    <div>
+      <div class="header">
+        <h1><a href="/paintCanvas/index.html#/guess">我来猜</a></h1>
+        <div>
+          <input
+            type="text"
+            v-model.trim="answer"
+            v-on:keyup.enter="onEnter"
+            placeholder="在这里填写您的答案哟!别忘了Enter或者确定!"
+          >
+          <button v-on:click="onEnter">确定</button>
+        </div>
+      </div>
+      <h1>你的答案是<span style="color: red;">{{ answer }}</span></h1>
+      <canvas
+        v-on:mousedown="paintBegin"
+        v-on:mouseup="paintEnd"
+        id="canvas"
+        width="800"
+        height="500"
+      ></canvas>
+      <button v-on:click="clearPath">清除</button>
+    </div>
+  <Chatting sp="painter"></Chatting>
   </div>
 </template>
 
 <script>
 let ctx;
-let socket = require('socket.io-client')('http://angryzhangzhe.cn:2017');
-socket.on('connect', function () {
-  console.log('socket successful!');
-});
+let socket = require('socket.io-client')('http://localhost:2017');
+import Chatting from './Chatting.vue';
 export default {
   name: 'Canvas',
+  components: {
+    'Chatting': Chatting
+  },
   mounted: function () {
     ctx = document.getElementById('canvas').getContext('2d');
   },
   data () {
     return {
+      answer: '',
     }
   },
   methods: {
@@ -53,6 +70,9 @@ export default {
     clearPath: function () {
       ctx.clearRect(0, 0, 800, 500);
       socket.emit('clear');
+    },
+    onEnter: function () {
+      socket.emit('answer', this.answer);
     }
   }
 }
@@ -71,5 +91,24 @@ button {
   height: 30px;
   font-size: 16px;
   border: 2px #777 solid;
+  box-sizing: content-box;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 800px;
+}
+input {
+  height: 30px;
+  width: 350px;
+  font-size: 16px;
+  line-height: 30px;
+  outline: none;
+  padding: 0;
+}
+.Canvas {
+  display: flex;
+  justify-content: space-around;
 }
 </style>
