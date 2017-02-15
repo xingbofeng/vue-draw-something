@@ -1,6 +1,6 @@
 <template>
   <div class="Canvas">
-    <h1><a href="/#/guess">我来猜</a></h1>
+    <h1><a href="/paintCanvas/index.html#/guess">我来猜</a></h1>
     <canvas
       v-on:mousedown="paintBegin"
       v-on:mouseup="paintEnd"

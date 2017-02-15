@@ -1,6 +1,6 @@
 <template>
   <div class="Canvas">
-    <h1><a href="/#/paint">我来画</a></h1>
+    <h1><a href="/paintCanvas/index.html#/paint">我来画</a></h1>
     <canvas
       id="canvas"
       width="800"
