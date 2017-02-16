@@ -1,13 +1,51 @@
-# paint-canvas
-为了穴习一下`canvas`
-## [demo](http://www.xingbofeng.com/paintCanvas/index.html#/paint)
+# paintCanvas
 
-![image](http://angryzhangzhe.cn/static/upload/20170117/Q6fu1I7x9hZbh5XVD4rcPw_9.jpg)
+:art: paintCanvas是基于`vue`的你画我猜小游戏。
 
-2017年2月14日：做了个傻吊界面，还需要把服务端补上。
+## [猛戳这里查看Demo](http://www.xingbofeng.com/paintCanvas/index.html#/paint)
+## 技术栈
+* `socket.io`
+* `vue`
+## 浏览器兹词
+只兹词`高版本chrome`，请更换您的`辣鸡浏览器`。
+## 运行效果
+![image](paint.jpg)
 
-![image](./black-glasses.png)
+![image](guess.jpg)
+## 依赖版本
+`node v7.1.0`
 
-2017年2月15日：基本实现功能。
+注：由于本项目使用了部分es6的语法，因此需要较高版本的node环境，建议升级node版本运行。
 
-还有暴力膜蛤不可取！
+## 目录说明
+- `src/`: 项目前端部分代码;
+- `static/`: 项目静态文件部分;
+- `server/`: 项目服务端代码，目前已部署到我的`测试服务器`(接口为`http://angryzhangzhe.cn:2017`)，非商业可自由使用;
+- `test/`: 单元测试代码所在目录;
+
+## 使用方法
+* 下载本项目
+```
+git clone https://github.com/xingbofeng/paintCanvas.git
+```
+
+* 启动服务端
+注：本项目服务端代码我已部署到我自己的`测试服务器`(接口为`http://angryzhangzhe.cn:2017`)上，可在线查看。若想本地调试接口，您可以通过以下命令启动本地服务端：
+```
+npm install
+node server/server.js
+```
+
+* 运行单元测试
+待完成ing......
+
+## 待做事件清单
+- [x] 即时聊天
+- [ ] 单元测试
+- [x] 正误判断
+- [ ] 界面样式
+
+## 更新日志
+* 1.0.0 :完成同步画图、即时聊天、正误判断功能;
+## LICENSE
+[MIT LICENSE](./LICENSE)
