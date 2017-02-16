@@ -6,6 +6,7 @@
 ## 技术栈
 * `socket.io`
 * `vue`
+
 ## 浏览器兹词
 只兹词`高版本chrome`，请更换您的`辣鸡浏览器`。
 ## 运行效果
@@ -47,5 +48,6 @@ node server/server.js
 
 ## 更新日志
 * 1.0.0 :完成同步画图、即时聊天、正误判断功能;
+
 ## LICENSE
 [MIT LICENSE](./LICENSE)
