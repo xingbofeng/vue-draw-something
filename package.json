@@ -1,6 +1,6 @@
 {
   "name": "paint-canvas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A paint game",
   "author": "xingbofeng <503908971@qq.com>",
   "private": true,
@@ -9,7 +9,8 @@
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e"
+    "test": "npm run unit && npm run e2e",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "socket.io": "^1.7.2",

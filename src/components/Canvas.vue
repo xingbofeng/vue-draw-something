@@ -16,7 +16,9 @@
       <h1>你的答案是<span style="color: red;">{{ answer }}</span></h1>
       <canvas
         v-on:mousedown="paintBegin"
+        v-on:touchstart="paintBegin"
         v-on:mouseup="paintEnd"
+        v-on:touchend="paintEnd"
         id="canvas"
         width="800"
         height="500"
@@ -54,9 +56,14 @@ export default {
         top: e.offsetY
       });
       document.onmousemove = this.painting;
+      document.ontouchmove = this.painting;
     },
     painting: function (e) {
       ctx.lineTo(e.offsetX, e.offsetY);
+      if (e.offsetX >=800 || e.offsetX <=0 || e.offsetY >= 500 || e.offsetY <= 0) {
+        this.paintEnd();
+        return;
+      }
       socket.emit('paint', {
         left: e.offsetX,
         top: e.offsetY
@@ -65,7 +72,9 @@ export default {
     },
     paintEnd: function (e) {
       document.onmouseup = null;
+      document.ontouchend = null;
       document.onmousemove = null;
+      document.ontouchmove = null;
     },
     clearPath: function () {
       ctx.clearRect(0, 0, 800, 500);

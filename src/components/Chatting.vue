@@ -8,7 +8,7 @@
         v-on:keyup.enter="submitChat"
         placeholder="在此输入您的聊天内容"
       >
-      <button v-on:click="submitChat">确定</button>
+      <button v-on:click="submitChat">发送</button>
     </div>
 </template>
 <script>
@@ -27,6 +27,7 @@ export default {
   		let myMessage = document.createElement('h1');
   		myMessage.innerText = message;
   		broad.appendChild(myMessage);
+      myMessage.scrollIntoView();
   	});
   },
   methods: {
@@ -34,6 +35,7 @@ export default {
       var chat = this.chat;
       var sp = this.sp;
       socket.emit('chat', `${sp} says: "${chat}"`);
+      this.chat = '';
     }
   }
 }
