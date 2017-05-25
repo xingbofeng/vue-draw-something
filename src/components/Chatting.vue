@@ -1,15 +1,15 @@
 <template>
 	<div class="chat">
-      <div class="chatBroad">
-      </div>
-      <input
-        type="text"
-        v-model="chat"
-        v-on:keyup.enter="submitChat"
-        placeholder="在此输入您的聊天内容"
-      >
-      <button v-on:click="submitChat">发送</button>
+    <div class="chatBroad">
     </div>
+    <input
+      type="text"
+      v-model="chat"
+      v-on:keyup.enter="submitChat"
+      placeholder="在此输入您的聊天内容"
+    >
+    <button v-on:click="submitChat">发送</button>
+  </div>
 </template>
 <script>
 let socket = require('socket.io-client')('http://localhost:2017');
