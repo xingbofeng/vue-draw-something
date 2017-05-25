@@ -9,7 +9,13 @@
       <router-link
         to="/"
       >
-        <mu-appbar title="vue-draw-something" />
+        <mu-appbar>
+          draw-something @
+          <img
+            src="./../assets/logo.jpeg"
+            class="logo"
+          />
+        </mu-appbar>
       </router-link>
       <mu-list>
         <mu-list-item
@@ -64,5 +70,9 @@ export default {
 </script>
 
 <style scoped>
+.logo {
+  height: 50px;
+  margin: 0 50px -14px 0px;
+}
 
 </style>

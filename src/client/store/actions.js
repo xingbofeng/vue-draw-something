@@ -27,10 +27,25 @@ const login = ({ commit, state }, { data, next }) => {
         path: '/error',
       });
     });
+};
+
+const logout = ({ commit, state }) => {
+  axios({
+    method: 'post',
+    url: `${config.server}/api/logout`,
+  })
+    .then((response) => {
+      commit(LOGIN, response.data);
+      router.push('/login');
+    })
+    .catch((error) => {
+      router.push('/error');
+    });
 }
 
 const actions = {
   login,
+  logout,
 };
 
 export default actions;

@@ -2,14 +2,12 @@
   <div class="LoginBox">
     <mu-text-field
       label="请输入用户名"
-      hintText="请输入用户名"
       type="text"
       labelFloat
       v-model="username"
     />
     <mu-text-field
       label="请输入密码"
-      hintText="请输入密码"
       type="password"
       labelFloat
       v-model="password"

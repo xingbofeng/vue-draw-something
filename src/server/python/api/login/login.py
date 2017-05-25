@@ -3,9 +3,6 @@
 from flask import *
 import json
 
-app = Flask(__name__)
-
-@app.route('/login', methods=['POST'])
 def login():
   username = request.get_json()['username']
   password = request.get_json()['password']

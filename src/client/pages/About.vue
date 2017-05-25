@@ -10,7 +10,7 @@
 
 <script>
 import Layout from '../components/Layout';
-import ExplainCard from '../components/ExplainCard';
+import ExplainCard from '../components/p_about/ExplainCard';
 
 export default {
   name: 'About',

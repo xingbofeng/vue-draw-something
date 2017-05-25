@@ -10,14 +10,12 @@
 
 <script>
 import Layout from '../components/Layout';
-import ExplainCard from '../components/ExplainCard';
 
 export default {
   name: 'Home',
 
   components: {
     Layout,
-    ExplainCard,
   },
 }
 </script>
