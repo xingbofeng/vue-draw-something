@@ -24,6 +24,10 @@
           title="关于"
           to="/about"
         />
+        <mu-list-item
+          title="去GitHub查看源码"
+          href="https://github.com/xingbofeng/vue-draw-something"
+        />
       </mu-list>
     </mu-drawer>
   </div>

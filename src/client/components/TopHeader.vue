@@ -7,8 +7,8 @@
         @click="toggle()"
       />
       <mu-flat-button
-        href="https://github.com/xingbofeng/vue-draw-something"
-        label="去GitHub查看源码"
+        :to="`${$store.state.login.status === 'success' ? '/' : '/login'}`"
+        :label="$store.state.login.text"
         slot="right"
       />
     </mu-appbar>

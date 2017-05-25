@@ -8,9 +8,11 @@
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit && npm run e2e",
-    "serve": "node server/index.js"
+    "node": "node src/server/node/index.js",
+    "python": "python3 src/server/python/index.py"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "muse-ui": "^2.0.3",
     "socket.io": "^1.7.2",
     "socket.io-client": "^1.7.2",

@@ -1,6 +1,10 @@
 import * as types from './mutation-types';
 
 const mutations = {
+  [types.LOGIN](state, login) {
+    state.login = login;
+  },
+
   [types.NET_STATUS](state, netStatus) {
     state.netStatus = netStatus;
   },

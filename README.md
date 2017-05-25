@@ -7,27 +7,33 @@ It is the draw-something Application. Front-End is built with `webpack` + `Vue.j
 
 Enter GitHub to see [code](https://github.com/xingbofeng/vue-draw-something)!
 
-Thanks for you support, waiting for your `issue`, `pr`, `star` or `follow`!I will release more interesting project in the future!
+## Technology stack
+### Front-End
+- `vue` + `vuex`+ `vue-router` vue based project
+- `webpack` + `webpack-dev-server` + `http-proxy-middleware` dev environment we use webpack-dev-server and http-proxy-middleware.
+- `Muse-UI` UI components library
+- `yarn` package manager.
+
+### Back-End
+#### Node.js
+- `Express` + `http-proxy-middleware` online we use Express and http-proxy-middleware
+- `socket.io`
+- `postman` test our interface.
+#### Python
+- `Python3`
+- `Flask`
 
 ## Online
 
-(敬请期待)
-
-Or you can clone this project to you own local environment, then enjoy this project online：
-
-```
-git clone https://github.com/xingbofeng/vue-draw-something.git
-
-cd vue-draw-something
-
-yarn install
-
-yarn run serve
-```
-
-Then open your browser, and go to http://localhost:8080/ to enjoy it!
+敬请期待
 
 ## Development
+
+Warning: If you are a developer of `Python`, you should update the version of your `Python`, this project is only supported `Python3.x`.
+
+If you are a developer of `Node.js`, this project is based on `es5` :smile:!Without any grammar of `es6`, it can run Lower version of `Node.js`.
+
+
 ```
 git clone https://github.com/xingbofeng/vue-draw-something.git
 
@@ -35,7 +41,7 @@ cd vue-draw-something
 
 yarn install
 
-yarn run serve
+yarn run node / yarn run python
 ```
 
 Then open your browser, and go to http://localhost:8080/ to enjoy it!
@@ -43,16 +49,6 @@ Then open your browser, and go to http://localhost:8080/ to enjoy it!
 ## Preview
 
 敬请期待
-
-## Technology stack
-- `vue` + `vuex`+ `vue-router` vue based project
-- `webpack` + `webpack-dev-server` + `http-proxy-middleware` dev environment we use webpack-dev-server and http-proxy-middleware.
-- `express` + `http-proxy-middleware` online we use express and http-proxy-middleware
-- `iView` UI components library
-- `vue-lazyload` help us lazyload images
-- `rem` + `flex` + `grid` responsive layout in mobile
-- `yarn` package manager.
-- `postman` test our interface
 
 ## Functions
 
@@ -63,25 +59,26 @@ Then open your browser, and go to http://localhost:8080/ to enjoy it!
 |
 |—— build 
 |—— config
-|—— server
-| |—— Node/ : The Back-End with `Node.js`
-| |__ Python/ : The Back-End with `Python`
 |
 |——src : dev resources.
-| |—— assets : images
-| |—— components/
-| |    |____ Common/ : reusable components
-| |    |____ ... : other components of the own page.
-| |
-| |—— router/
-| |    |____ index.js : the entry of router.
-| |    |____ server.js : export ajax function.
-| |    |____ serverConfig.js : export the server detail.
-| |    |____ routes/ : every page's router, changing the state of `vuex` at its lifecycle function.
-| |
-| |—— store : vuex
-| |—— App.vue : vue-draw-something
-| |__ main.js : the entry of vue-draw-something
+|   |—— server/ : The Back-End with `Python3` or `Node.js`
+|   |      |—— Node/ : The Back-End with `Node.js`
+|   |      |__ Python/ : The Back-End with `Python`
+|   |__ client/ : The Front-End with `Vue.js`
+|          |—— assets : images
+|          |—— components/
+|          |    |____ Common/ : reusable components
+|          |    |____ ... : other components of the own page.
+|          |
+|          |—— router/
+|          |    |____ index.js : the entry of router.
+|          |    |____ server.js : export ajax function.
+|          |    |____ serverConfig.js : export the server detail.
+|          |    |____ routes/ : every page's router, changing the state of `vuex` at its lifecycle function.
+|          |
+|          |—— store : vuex
+|          |—— App.vue : vue-draw-something
+|          |__ main.js : the entry of vue-draw-something
 |
 |__ static : static files
 
