@@ -1,43 +1,47 @@
 <template>
 	<div class="chat">
     <div class="chatBroad">
+      <h1
+        v-for="item in messageArray"
+      >{{ item }}</h1>
     </div>
     <input
       type="text"
-      v-model="chat"
-      v-on:keyup.enter="submitChat"
+      v-model="message"
+      @keyup.enter="submitChat"
       placeholder="在此输入您的聊天内容"
     >
-    <button v-on:click="submitChat">发送</button>
+    <button @click="submitChat">发送</button>
   </div>
 </template>
 <script>
-let socket = require('socket.io-client')('http://localhost:2017');
+import socketClient from 'socket.io-client';
+const socket = socketClient('http://localhost:2017');
+
 export default {
 	name: 'Chatting',
+
 	props: ['sp'],
-  data () {
+
+  data() {
     return {
-      chat: '',
+      message: '',
+      messageArray: [],
     }
   },
-  created: function () {
+
+  created() {
   	socket.on('chatting', (message) => {
-  		let broad = document.getElementsByClassName('chatBroad')[0];
-  		let myMessage = document.createElement('h1');
-  		myMessage.innerText = message;
-  		broad.appendChild(myMessage);
-      myMessage.scrollIntoView();
+      this.messageArray.push(message);
   	});
   },
+
   methods: {
     submitChat: function () {
-      var chat = this.chat;
-      var sp = this.sp;
-      socket.emit('chat', `${sp} says: "${chat}"`);
-      this.chat = '';
-    }
-  }
+      socket.emit('chat', `${this.sp} says: "${this.message}"`);
+      this.message = '';
+    },
+  },
 }
 </script>
 

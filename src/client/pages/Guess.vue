@@ -10,7 +10,7 @@
 
 <script>
 import Layout from '../components/Layout';
-import GuessContent from '../components/GuessContent'
+import GuessContent from '../components/p_guess/GuessContent';
 
 export default {
   name: 'Guess',

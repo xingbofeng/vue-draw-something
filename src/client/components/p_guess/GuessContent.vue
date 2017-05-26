@@ -14,7 +14,7 @@
         </div>
       </div>
       <canvas
-        id="canvas"
+        ref="canvas"
         width="800"
         height="500"
       ></canvas>
@@ -24,17 +24,19 @@
 </template>
 
 <script>
-let socket = require('socket.io-client')('http://localhost:2017');
-let answer;
-import Chatting from './Chatting.vue';
+import Chatting from '../Chatting.vue';
+import socketClient from 'socket.io-client';
+
 export default {
-  name: 'Guess',
+  name: 'GuessContent',
+
   components: {
     'Chatting': Chatting
   },
-  mounted: function () {
-  	let ctx;
-    ctx = document.getElementById('canvas').getContext('2d');
+
+  mounted() {
+    const socket = socketClient('http://localhost:2017');
+    const ctx = this.$refs.canvas.getContext('2d');
 		socket.on('connect', function () {
 		  socket.on('painting', function (message) {
 			ctx.lineTo(message.left, message.top);
@@ -50,19 +52,21 @@ export default {
 		  });
       socket.on('givingAnswer', function (message) {
         // 设置答案事件
-        answer = message;
+        this.answer = message;
       });
 		});
   },
-  data () {
+
+  data() {
     return {
       answer: '',
       myAnswer: '',
     }
   },
+
   methods: {
-    onEnter: function () {
-      if (this.myAnswer === answer) {
+    onEnter() {
+      if (this.myAnswer === this.answer) {
         window.alert('恭喜你答对了！');
       } else {
         window.alert('抱歉，回答错误！');

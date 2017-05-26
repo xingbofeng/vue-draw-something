@@ -32,7 +32,7 @@
 <script>
 let ctx;
 let socket = require('socket.io-client')('http://localhost:2017');
-import Chatting from './Chatting.vue';
+import Chatting from '../Chatting.vue';
 export default {
   name: 'Canvas',
   components: {
