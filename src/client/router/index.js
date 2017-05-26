@@ -6,6 +6,7 @@ import Guess from '../pages/Guess';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 Vue.use(Router)
 
@@ -15,7 +16,7 @@ const router = new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
     },
     {
       path: '/login',
@@ -34,17 +35,22 @@ const router = new Router({
     {
       path: '/about',
       name: 'About',
-      component: About
+      component: About,
     },
     {
       path: '/paint',
       name: 'Paint',
-      component: Paint
+      component: Paint,
     },
     {
       path: '/guess',
       name: 'Guess',
-      component: Guess
+      component: Guess,
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Signup,
     },
   ],
 });
@@ -60,7 +66,7 @@ router.beforeEach((to, from, next) => {
   if (store.state.login.status === 'success') {
     return next();
   }
-  if (to.path === '/login') {
+  if (to.path === '/login' || to.path === '/signup') {
     return next();
   }
   return store.dispatch('login', {

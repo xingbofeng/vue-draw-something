@@ -3,8 +3,6 @@
 from flask import *
 import json
 
-app = Flask(__name__)
-
 def logout():
   session.pop('username', None)
   return jsonify({

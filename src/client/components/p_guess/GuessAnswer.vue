@@ -15,12 +15,12 @@
     />
     <mu-dialog :open="isDialogShow">
       {{ correctAnswer === userAnswer ? '恭喜你答对了！' : '回答错啦~再仔细思考思考呗~' }}
-    <mu-flat-button
-      label="确定"
-      slot="actions"
-      primary
-      @click="closeDialog"
-    />
+      <mu-flat-button
+        label="确定"
+        slot="actions"
+        primary
+        @click="closeDialog"
+      />
     </mu-dialog>
   </div>
 </template>
