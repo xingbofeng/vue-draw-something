@@ -25,7 +25,7 @@
       ></canvas>
       <button v-on:click="clearPath">清除</button>
     </div>
-  <Chatting sp="painter"></Chatting>
+  <Chatting person="painter"></Chatting>
   </div>
 </template>
 

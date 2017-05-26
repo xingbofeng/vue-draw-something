@@ -2,7 +2,6 @@
   <div class="Canvas">
     <div>
       <div class="header">
-        <h1><a href="/paintCanvas/index.html#/paint">我来画</a></h1>
         <div>
           <input
             type="text"

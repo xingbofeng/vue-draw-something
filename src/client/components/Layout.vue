@@ -5,7 +5,9 @@
       :class="{ active: $store.state.leftDrawer.open }"
     >
       <top-header />
-      <slot name="content" />
+      <mu-content-block>
+        <slot name="content" />
+      </mu-content-block>
     </main>
   </div>
 </template>

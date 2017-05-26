@@ -1,44 +1,60 @@
 <template>
-	<div class="chat">
-    <div class="chatBroad">
-      <h1
-        v-for="item in messageArray"
-      >{{ item }}</h1>
-    </div>
-    <input
+  <div class="chatting">
+  	<mu-paper class="paper" :zDepth="3">
+      <mu-list>
+        <mu-sub-header>聊天记录</mu-sub-header>
+        <mu-list-item
+          v-for="item in messageArray"
+          :title="item"
+        >
+          <mu-icon value="chat_bubble" slot="right"/>
+        </mu-list-item>
+      </mu-list>
+    </mu-paper>
+    <mu-text-field
       type="text"
       v-model="message"
-      @keyup.enter="submitChat"
-      placeholder="在此输入您的聊天内容"
-    >
-    <button @click="submitChat">发送</button>
+      label="在此输入您的聊天内容"
+      @change="submitChat"
+    />
+    <mu-raised-button
+      @click="submitChat"
+      label="确定"
+      icon="input"
+      :disabled="!message"
+      primary
+    />
   </div>
 </template>
 <script>
 import socketClient from 'socket.io-client';
-const socket = socketClient('http://localhost:2017');
 
 export default {
 	name: 'Chatting',
 
-	props: ['sp'],
+	props: ['person'],
 
   data() {
     return {
+      socket: socketClient('http://localhost:2017'),
       message: '',
       messageArray: [],
     }
   },
 
   created() {
-  	socket.on('chatting', (message) => {
+  	this.socket.on('chatting', (message) => {
+      if (this.messageArray.length >= 10) {
+        // 最多只有10条
+        this.messageArray.shift();
+      }
       this.messageArray.push(message);
   	});
   },
 
   methods: {
-    submitChat: function () {
-      socket.emit('chat', `${this.sp} says: "${this.message}"`);
+    submitChat() {
+      this.socket.emit('chat', `${this.person}: "${this.message}"`);
       this.message = '';
     },
   },
@@ -46,31 +62,12 @@ export default {
 </script>
 
 <style scoped>
-button {
-  background-color: green;
-  border-radius: 2px;
-  text-align: center;
-  width: 50px;
-  height: 30px;
-  font-size: 16px;
-  border: 2px #777 solid;
-  box-sizing: content-box;
+.chatting {
+  margin-left: 50px;
+  padding: 20px;
 }
-input {
-  height: 30px;
-  font-size: 16px;
-  line-height: 30px;
-  outline: none;
-  padding: 0;
-}
-.chatBroad {
-  height: 600px;
-  overflow-y: scroll;
-  width: 350px;
-  border: 2px #777 solid;
-}
-.chat input {
-  margin-top: 20px;
-  width: 280px;
+
+.paper {
+  height: 535px;
 }
 </style>
