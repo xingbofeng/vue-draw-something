@@ -31,7 +31,7 @@
 
 <script>
 let ctx;
-let socket = require('socket.io-client')('http://localhost:2017');
+let socket = require('socket.io-client')('http://localhost:5000');
 import Chatting from '../Chatting.vue';
 export default {
   name: 'Canvas',

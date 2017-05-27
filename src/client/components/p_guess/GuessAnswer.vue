@@ -33,7 +33,7 @@ export default {
 
   data() {
     return {
-      socket: socketClient('http://localhost:2017'),
+      socket: socketClient('http://localhost:5000'),
       correctAnswer: '', // 正确答案
       userAnswer: '', // 用户答案
       isDialogShow: false, // 是否展示对话框

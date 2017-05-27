@@ -22,6 +22,7 @@ Enter GitHub to see [code](https://github.com/xingbofeng/vue-draw-something)!
 #### Python
 - `Python3`
 - `Flask`
+- `Mongo`
 
 ## Online
 
@@ -56,31 +57,94 @@ Then open your browser, and go to http://localhost:8080/ to enjoy it!
 
 ## Directory
 ```
-|
-|—— build 
-|—— config
-|
-|——src : dev resources.
-|   |—— server/ : The Back-End with `Python3` or `Node.js`
-|   |      |—— Node/ : The Back-End with `Node.js`
-|   |      |__ Python/ : The Back-End with `Python`
-|   |__ client/ : The Front-End with `Vue.js`
-|          |—— assets : images
-|          |—— components/
-|          |    |____ Common/ : reusable components
-|          |    |____ ... : other components of the own page.
-|          |
-|          |—— router/
-|          |    |____ index.js : the entry of router.
-|          |    |____ server.js : export ajax function.
-|          |    |____ serverConfig.js : export the server detail.
-|          |    |____ routes/ : every page's router, changing the state of `vuex` at its lifecycle function.
-|          |
-|          |—— store : vuex
-|          |—— App.vue : vue-draw-something
-|          |__ main.js : the entry of vue-draw-something
-|
-|__ static : static files
+.
+├── LICENSE
+├── README.md
+├── README_ZH.md
+├── build
+│   ├── build.js
+│   ├── check-versions.js
+│   ├── dev-client.js
+│   ├── dev-server.js
+│   ├── utils.js
+│   ├── vue-loader.conf.js
+│   ├── webpack.base.conf.js
+│   ├── webpack.dev.conf.js
+│   ├── webpack.prod.conf.js
+│   └── webpack.test.conf.js
+├── config
+│   ├── dev.env.js
+│   ├── index.js
+│   ├── prod.env.js
+│   └── test.env.js
+├── index.html
+├── package.json
+├── src
+│   ├── client
+│   │   ├── App.vue
+│   │   ├── assets
+│   │   │   ├── draw-something.jpg
+│   │   │   └── logo.jpeg
+│   │   ├── components
+│   │   │   ├── Chatting.vue
+│   │   │   ├── Layout.vue
+│   │   │   ├── LeftDrawer.vue
+│   │   │   ├── TopHeader.vue
+│   │   │   ├── p_about
+│   │   │   │   └── ExplainCard.vue
+│   │   │   ├── p_guess
+│   │   │   │   ├── Board.vue
+│   │   │   │   └── GuessAnswer.vue
+│   │   │   ├── p_home
+│   │   │   ├── p_login
+│   │   │   │   └── LoginBox.vue
+│   │   │   ├── p_paint
+│   │   │   │   └── PaintContent.vue
+│   │   │   └── p_signup
+│   │   │       └── SignupBox.vue
+│   │   ├── currency.js
+│   │   ├── main.js
+│   │   ├── pages
+│   │   │   ├── About.vue
+│   │   │   ├── Guess.vue
+│   │   │   ├── Home.vue
+│   │   │   ├── Login.vue
+│   │   │   ├── Paint.vue
+│   │   │   └── Signup.vue
+│   │   ├── plugins
+│   │   │   ├── devtool.js
+│   │   │   └── logger.js
+│   │   ├── router
+│   │   │   └── index.js
+│   │   ├── serverConfig.json
+│   │   ├── store
+│   │   │   ├── actions.js
+│   │   │   ├── getters.js
+│   │   │   ├── index.js
+│   │   │   ├── mutation-types.js
+│   │   │   ├── mutations.js
+│   │   │   └── state.js
+│   │   └── util.js
+│   └── server
+│       ├── node
+│       │   └── index.js
+│       └── python
+│           ├── index.py
+│           └── lib
+│               ├── login
+│               │   ├── __init__.py
+│               │   └── login.py
+│               ├── logout
+│               │   ├── __init__.py
+│               │   └── logout.py
+│               ├── signup
+│               │   ├── __init__.py
+│               │   └── signup.py
+│               └── user
+│                   ├── __init__.py
+│                   └── user.py
+├── static
+└── yarn.lock
 
 ```
 

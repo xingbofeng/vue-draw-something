@@ -16,7 +16,7 @@ export default {
 
   data() {
     return {
-      socket: socketClient('http://localhost:2017'),
+      socket: socketClient('http://localhost:5000'),
       ctx: {},
     }
   },
